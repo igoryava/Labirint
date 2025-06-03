@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e27e9efe-4f8f-432f-9392-e50550aa4abd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Labirint1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Labirint1/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Labirint1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Labirint1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/HUD/CoinCounter/CoinCounter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/HUD/CoinCounter/CoinCounter.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +20,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu/Settings.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/HUD/CoinCounter/CoinCounter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/Pickup/Coin/Coin.cs" />
       </list>
     </option>
   </component>
@@ -58,7 +64,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1748948012966</updated>
-      <workItem from="1748948019499" duration="1293000" />
+      <workItem from="1748948019499" duration="3027000" />
     </task>
     <servers />
   </component>

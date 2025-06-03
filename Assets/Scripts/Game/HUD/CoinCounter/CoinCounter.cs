@@ -17,8 +17,8 @@ public class CoinCounter : MonoBehaviour
         _coinsLeft = _coinsOnLevel;
         CoinsValueChanged?.Invoke(_coinsLeft);
     }
-
-    private void OnEnable()
+    
+    private void Awake()
     {
         Coin.Pickuped += OnPickuped;
         Coin.Spawned += OnSpawned;
@@ -41,9 +41,9 @@ public class CoinCounter : MonoBehaviour
         CoinsValueChanged?.Invoke(_coinsLeft);
     }
 
-    private void OnDisable()
-    {
-        Coin.Pickuped -= OnPickuped;
-        Coin.Spawned -= OnSpawned;
-    }
+    // private void OnDisable()
+    // {
+    //     Coin.Pickuped -= OnPickuped;
+    //     Coin.Spawned -= OnSpawned;
+    // }
 }

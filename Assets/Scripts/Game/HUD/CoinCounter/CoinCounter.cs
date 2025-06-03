@@ -12,24 +12,31 @@ public class CoinCounter : MonoBehaviour
     public event Action<int> CoinsValueChanged;
     public event Action AllCoinsCollected;
 
+    public static CoinCounter Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (!Instance)
+        {
+            Instance = this;
+            return;
+        }
+
+        Destroy(gameObject);
+    }
+
     private void Start()
     {
         _coinsLeft = _coinsOnLevel;
         CoinsValueChanged?.Invoke(_coinsLeft);
     }
-    
-    private void Awake()
-    {
-        Coin.Pickuped += OnPickuped;
-        Coin.Spawned += OnSpawned;
-    }
 
-    private void OnSpawned()
+    public void OnSpawned()
     {
         _coinsOnLevel++;
     }
 
-    private void OnPickuped()
+    public void OnPickuped()
     {
         _coinsLeft--;
         if (_coinsLeft <= 0)
@@ -40,10 +47,4 @@ public class CoinCounter : MonoBehaviour
 
         CoinsValueChanged?.Invoke(_coinsLeft);
     }
-
-    // private void OnDisable()
-    // {
-    //     Coin.Pickuped -= OnPickuped;
-    //     Coin.Spawned -= OnSpawned;
-    // }
 }

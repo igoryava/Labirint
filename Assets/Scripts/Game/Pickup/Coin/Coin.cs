@@ -5,14 +5,17 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour, IPickupable
 {
+    public static event Action Spawned;
+    public static event Action Pickuped;
+
     private void Start()
     {
-        CoinCounter.Instance.OnSpawned();
+        Spawned?.Invoke();
     }
 
     public void Pickup()
     {
-        CoinCounter.Instance.OnPickuped();
+        Pickuped?.Invoke();
         Destroy(gameObject);
     }
 }

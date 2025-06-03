@@ -16,28 +16,32 @@ public class CoinCounter : MonoBehaviour
 
     private void Awake()
     {
-        if (!Instance)
-        {
-            Instance = this;
-            return;
-        }
-
-        Destroy(gameObject);
+        Instance = this;
     }
 
-    private void Start()
+    private void OnEnable()
     {
-        _coinsLeft = _coinsOnLevel;
-        CoinsValueChanged?.Invoke(_coinsLeft);
+        Coin.Spawned += OnSpawned;
+        Coin.Pickuped += OnPickuped;
+    }
+
+    private void OnDisable()
+    {
+        Coin.Spawned -= OnSpawned;
+        Coin.Pickuped -= OnPickuped;
     }
 
     public void OnSpawned()
     {
+        Debug.Log("Coin Spawned");
         _coinsOnLevel++;
+        _coinsLeft = _coinsOnLevel;
+        CoinsValueChanged?.Invoke(_coinsLeft);
     }
 
     public void OnPickuped()
     {
+        Debug.Log("Coin Pickuped");
         _coinsLeft--;
         if (_coinsLeft <= 0)
         {

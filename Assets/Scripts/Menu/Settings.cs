@@ -41,6 +41,8 @@ public class Settings : MonoBehaviour
     {
         int level = PlayerPrefs.GetInt("CompleatedLevels", 1);
 
+
+        Debug.Log(level);
         if (level == 1)
         {
             SceneManager.LoadScene("Game");

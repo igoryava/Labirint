@@ -21,6 +21,12 @@ public class CoinCounter : MonoBehaviour
     private void OnEnable()
     {
         Coin.Pickuped += OnPickuped;
+        Coin.Spawned += OnSpawned;
+    }
+
+    private void OnSpawned()
+    {
+        _coinsOnLevel++;
     }
 
     private void OnPickuped()
@@ -38,5 +44,6 @@ public class CoinCounter : MonoBehaviour
     private void OnDisable()
     {
         Coin.Pickuped -= OnPickuped;
+        Coin.Spawned -= OnSpawned;
     }
 }

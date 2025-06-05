@@ -29,15 +29,7 @@ public class GameWin : MonoBehaviour
     {
         _coinCounter.AllCoinsCollected -= OnAllCoinsCollected;
         _lose.enabled = false;
-
-        _playerCollider.OnTriggerEnter2DAsObservable().Subscribe(other =>
-        {
-            if (other == _outCollider)
-            {
-                Win();
-                _disposable.Clear();
-            }
-        }).AddTo(_disposable);
+        Win();
     }
 
     private void Win()
